@@ -1,0 +1,53 @@
+Host *
+   StrictHostKeyChecking no
+   GSSAPIAuthentication no
+   IdentitiesOnly yes
+   ServerAliveInterval 20
+   TCPKeepAlive no
+Host afam
+   Hostname 164.52.200.20
+   User noor
+   IdentityFile ~/.ssh/id_ed25519_afam_cloud 
+   Compression yes
+Host aws
+   Hostname 3.219.35.5
+   User ubuntu
+   IdentityFile ~/.ssh/id_ed25519_aws
+   Compression yes
+Host gitlab gitlab.com
+   Hostname gitlab.com
+   User git
+   IdentityFile ~/.ssh/id_ed25519_gitlab
+   Compression yes
+Host github github.com
+   Hostname github.com
+   User git
+   IdentityFile ~/.ssh/id_ed25519_github
+   Compression yes
+Host gcp
+   Hostname 35.196.163.21
+   User nooru_devs
+   IdentityFile ~/.ssh/google_compute_engine
+   Port 6000
+   Compression yes
+Host rhaws
+   Hostname 34.234.67.182
+   IdentityFile ~/.ssh/id_ed25519_aws_rhel_rhel-user
+   User rhel-user
+   Compression yes
+Host tunnel.*.ngrok.com
+   Hostname tunnel.us.ngrok.com
+   IdentityFile ~/.ssh/id_rsa_ngrock_tunneling
+   Compression yes
+Host awsf
+   Hostname 3.234.240.227
+   User ubuntu
+   IdentityFile ~/.ssh/id_ed25519_aws_flutter
+   Compression yes
+Host getdb
+   Hostname 164.52.200.20
+   User noor
+   LocalForward  5432 localhost:5432 
+   IdentityFile ~/.ssh/id_ed25519_afam_cloud 
+   Compression yes
+   LogLevel DEBUG
