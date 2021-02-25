@@ -83,7 +83,7 @@ export ZSH_TMUX_TERM="screen-256color"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
