@@ -83,7 +83,7 @@ export ZSH_TMUX_TERM="screen-256color"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl ansible copyfile copydir docker-compose grc systemd zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -144,5 +144,3 @@ export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:
 
 # export LANG=en_US.UTF-8
  export LC_CTYPE=en_US.UTF-8
-
-RPROMPT='$(battery_pct_prompt)'
