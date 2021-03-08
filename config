@@ -1,16 +1,14 @@
 Host *
    StrictHostKeyChecking no
-   GSSAPIAuthentication no
-   IdentitiesOnly yes
    ServerAliveInterval 20
    TCPKeepAlive no
-Host afam
+Host afam-old
    Hostname 164.52.200.20
    User noor
    IdentityFile ~/.ssh/id_ed25519_afam_cloud 
    Compression yes
 Host aws
-   Hostname 3.219.35.5
+   Hostname 3.234.244.127
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_aws
    Compression yes
@@ -40,11 +38,11 @@ Host tunnel.*.ngrok.com
    IdentityFile ~/.ssh/id_rsa_ngrock_tunneling
    Compression yes
 Host awsf
-   Hostname 3.234.240.227
+   Hostname 3.234.244.127
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_aws_flutter
    Compression yes
-Host getdb
+Host getdb-old
    Hostname 164.52.200.20
    User noor
    LocalForward  5432 localhost:5432 
@@ -52,7 +50,34 @@ Host getdb
    Compression yes
    LogLevel DEBUG
 Host azure
-   Hostname 20.197.60.195
+   Hostname 40.80.88.206
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_azure_ubuntu
    Compression yes
+Host afam
+   Hostname 75.119.130.130
+   User noor
+   IdentityFile ~/.ssh/id_ed25519_afam_contabo
+   SendEnv TMUX
+   Compression yes
+Host getdb
+   Hostname 75.119.130.130
+   User noor
+   LocalForward  5432 localhost:5432 
+   IdentityFile ~/.ssh/id_ed25519_afam_contabo
+   Compression yes
+   LogLevel DEBUG
+Host alibaba_root
+   Hostname 149.129.128.240
+   User root
+   IdentityFile ~/.ssh/id_ed25519_alibaba_cloud
+   LogLevel DEBUG
+Host alb
+   Hostname 149.129.128.240
+   User ubuntu
+   IdentityFile ~/.ssh/id_ed25519_alibaba_cloud
+   Port 19022
+   SendEnv TMUX
+#   RemoteCommand echo "Hello World"
+#   PermitLocalCommand yes
+#   LogLevel DEBUG

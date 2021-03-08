@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/rootofadmin/.oh-my-zsh"
+export ZSH=$HOME"/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -83,7 +83,7 @@ export ZSH_TMUX_TERM="screen-256color"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl ansible copyfile copydir docker-compose grc systemd zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl ansible copyfile copydir docker-compose grc systemd aws zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -131,9 +131,11 @@ alias pip='pip3'
 alias python='python3'
 alias explor='nautilus "$(pwd)" &'
 alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
+alias cdr='cd /home/rootofadmin/projects/react'
+alias pcli='protonvpn-cli'
 
 #AndroidDev PATH
-DEV_TOOLS="/home/rootofadmin/DevTools"
+DEV_TOOLS=$HOME"/DevTools"
 ANDROID_HOME="$DEV_TOOLS/Android"
 
 export ANDROID_HOME
