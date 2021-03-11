@@ -133,14 +133,18 @@ alias explor='nautilus "$(pwd)" &'
 alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
 alias cdr='cd /home/rootofadmin/projects/react'
 alias pcli='protonvpn-cli'
+alias c='clear'
 
 #AndroidDev PATH
 DEV_TOOLS=$HOME"/DevTools"
-ANDROID_HOME="$DEV_TOOLS/Android"
+ANDROID_HOME=$HOME"/Android/Sdk"
 
 export ANDROID_HOME
 export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools
+export PATH="$PATH:$DEV_TOOLS/flutter/bin"
 # export PATH=${PATH}:/root/android-sdk-linux/platform-tools
+
+# export CHROME_EXECUTABLE=''
 
 # export for tmux font compatiblity
 

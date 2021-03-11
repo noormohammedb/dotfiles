@@ -2,13 +2,15 @@ Host *
    StrictHostKeyChecking no
    ServerAliveInterval 20
    TCPKeepAlive no
+   ForwardAgent no
+   IdentityAgent none
 Host afam-old
    Hostname 164.52.200.20
    User noor
    IdentityFile ~/.ssh/id_ed25519_afam_cloud 
    Compression yes
 Host aws
-   Hostname 3.234.244.127
+   Hostname 18.207.134.189
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_aws
    Compression yes
@@ -38,7 +40,7 @@ Host tunnel.*.ngrok.com
    IdentityFile ~/.ssh/id_rsa_ngrock_tunneling
    Compression yes
 Host awsf
-   Hostname 3.234.244.127
+   Hostname 18.207.134.189
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_aws_flutter
    Compression yes
@@ -59,12 +61,14 @@ Host afam
    User noor
    IdentityFile ~/.ssh/id_ed25519_afam_contabo
    SendEnv TMUX
+   Port 19022
    Compression yes
 Host getdb
    Hostname 75.119.130.130
    User noor
    LocalForward  5432 localhost:5432 
    IdentityFile ~/.ssh/id_ed25519_afam_contabo
+   Port 19022
    Compression yes
    LogLevel DEBUG
 Host alibaba_root
