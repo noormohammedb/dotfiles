@@ -83,7 +83,7 @@ export ZSH_TMUX_TERM="screen-256color"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl ansible copyfile copydir docker-compose grc systemd aws zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl ansible copyfile copydir docker-compose grc systemd aws ufw zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -134,6 +134,7 @@ alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
 alias cdr='cd /home/rootofadmin/projects/react'
 alias pcli='protonvpn-cli'
 alias c='clear'
+getip () { curl -H "Referer:https://ipinfo.io/" https://ipinfo.io/widget/"$1";}
 
 #AndroidDev PATH
 DEV_TOOLS=$HOME"/DevTools"
