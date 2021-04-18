@@ -19,10 +19,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # COLOR Prompt
 
-export COLOR_PROMPT=yes
-export force_colored_prompt=yes
-export TERM="xterm-256color"
-export ZSH_TMUX_TERM="screen-256color"
+ export COLOR_PROMPT=yes
+ export force_colored_prompt=yes
+ export TERM="xterm-256color"
+ export ZSH_TMUX_TERM="screen-256color"
 
 
 # Set list of themes to pick from when loading at random
@@ -134,6 +134,7 @@ alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
 alias cdr='cd /home/rootofadmin/projects/react'
 alias pcli='protonvpn-cli'
 alias c='clear'
+alias la='exa -al'
 getip () { curl -H "Referer:https://ipinfo.io/" https://ipinfo.io/widget/"$1";}
 
 #AndroidDev PATH
@@ -149,5 +150,5 @@ export PATH="$PATH:$DEV_TOOLS/flutter/bin"
 
 # export for tmux font compatiblity
 
-# export LANG=en_US.UTF-8
- export LC_CTYPE=en_US.UTF-8
+export LANG=en_US.UTF-8
+# export LC_CTYPE=en_US.UTF-8
