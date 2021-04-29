@@ -1,8 +1,11 @@
+set nocompatible
 set nu
 set tabstop=3
 
 " set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P
 
+syntax enable
+filetype plugin on
 
 
 python3 from powerline.vim import setup as powerline_setup

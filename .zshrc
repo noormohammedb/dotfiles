@@ -83,7 +83,32 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git docker tmux vscode ubuntu npm node man adb sudo git-auto-fetch battery minikube kubectl ansible copyfile copydir docker-compose grc systemd aws ufw zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(
+	git
+	docker
+	tmux vscode
+	ubuntu
+	npm
+	node
+	man
+	adb
+	sudo
+	git-auto-fetch
+	battery
+	minikube
+	kubectl
+	ansible
+	copyfile
+	copydir
+	docker-compose
+	grc
+	systemd
+	aws
+	ufw
+	colored-man-pages
+	zsh-syntax-highlighting
+	zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,7 +154,7 @@ alias mgrl='npm run migrate rollback'
 alias mgmk='npm run migrate make'
 alias pip='pip3'
 alias python='python3'
-alias explor='nautilus "$(pwd)" &'
+alias explor='/usr/bin/xdg-open $(pwd)'
 alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
 alias cdr='cd /home/rootofadmin/projects/react'
 alias pcli='protonvpn-cli'
@@ -137,12 +162,16 @@ alias c='clear'
 alias la='exa -al'
 getip () { curl -H "Referer:https://ipinfo.io/" https://ipinfo.io/widget/"$1";}
 
+# Local bin Path
+
+LOCAL_BIN=$HOME"/.local/bin"
+
 #AndroidDev PATH
 DEV_TOOLS=$HOME"/DevTools"
 ANDROID_HOME=$HOME"/Android/Sdk"
 
 export ANDROID_HOME
-export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools
+export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:LOCAL_BIN
 export PATH="$PATH:$DEV_TOOLS/flutter/bin"
 # export PATH=${PATH}:/root/android-sdk-linux/platform-tools
 
