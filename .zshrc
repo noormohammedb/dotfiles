@@ -171,7 +171,7 @@ DEV_TOOLS=$HOME"/DevTools"
 ANDROID_HOME=$HOME"/Android/Sdk"
 
 export ANDROID_HOME
-export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:LOCAL_BIN
+export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:$LOCAL_BIN
 export PATH="$PATH:$DEV_TOOLS/flutter/bin"
 # export PATH=${PATH}:/root/android-sdk-linux/platform-tools
 
