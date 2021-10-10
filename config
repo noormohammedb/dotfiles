@@ -1,0 +1,42 @@
+Host *
+   StrictHostKeyChecking no
+   ServerAliveInterval 20
+   TCPKeepAlive no
+   ForwardAgent no
+   IdentityAgent none
+   Compression yes
+Host server
+   Hostname 0.0.0.0
+   User root
+   IdentityFile ~/.ssh/id_ed25519
+   Port 22
+   SendEnv TMUX
+#   LogLevel DEBUG
+Host termux
+   # Hostname 192.168.166.182
+   # Hostname 192.168.43.1
+   Hostname 192.168.123.159
+   IdentityFile ~/.ssh/id_ed25519_termux
+   User u0_a349
+	Port 8022
+Host gitlab gitlab.com
+   Hostname gitlab.com
+   User git
+   IdentityFile ~/.ssh/id_ed25519_gitlab
+Host github github.com
+   Hostname github.com
+   User git
+   IdentityFile ~/.ssh/id_ed25519_github
+
+
+
+
+
+
+Host ssh-tunnel
+   Hostname 0.0.0.0
+   User root
+   Port 22
+   LocalForward  5432 localhost:5432 
+   IdentityFile ~/.ssh/id_ed25519
+   LogLevel DEBUG
