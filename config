@@ -40,3 +40,7 @@ Host ssh-tunnel
    LocalForward  5432 localhost:5432 
    IdentityFile ~/.ssh/id_ed25519
    LogLevel DEBUG
+
+### generate secure ssh key
+# ssh-keygen -t ed25519 -a 200 -N "" -f $HOME/.ssh/id_ed25519_sulaiman_fepper
+
