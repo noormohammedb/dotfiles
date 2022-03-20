@@ -15,7 +15,8 @@ export ZSH=$HOME"/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
 # ZSH_THEME="dallas"
 
 # COLOR Prompt
@@ -103,7 +104,7 @@ plugins=(
 	kubectl
 	ansible
 	copyfile
-	copydir
+	copypath
 	docker-compose
 	grc
 	systemd
@@ -154,19 +155,17 @@ alias pip='pip3'
 alias python='python3'
 alias explor='/usr/bin/xdg-open $(pwd)'
 alias c='clear'
-alias la='exa -al'
-alias speedtest='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias la='exa --icons -ghal'
+alias testspeed='curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -'
+alias al='apt list --upgradable'
+alias nt='{ ping 1.0.0.1; fg }&{ ping6 2606:4700:4700::1001; fg }'
+getip () { curl -H "Referer:https://ipinfo.io/" https://ipinfo.io/widget/"$1";}
+# qrsend () { curl -v --progress-bar -X POST -sS -o nul -vv -F upload=@$1 $2;}
+qrsend () { curl -X POST -o /dev/null -F upload=@$1 $2;}
 
 # Local bin Path
 
 LOCAL_BIN=$HOME"/.local/bin"
-
-# Golang dependency path
-
-
-# export PATH=${PATH}:/root/android-sdk-linux/platform-tools
-
-# export CHROME_EXECUTABLE=''
 
 # export for tmux font compatiblity
 
