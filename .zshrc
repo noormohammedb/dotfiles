@@ -171,3 +171,8 @@ LOCAL_BIN=$HOME"/.local/bin"
 
 export LANG=en_US.UTF-8
 # export LC_CTYPE=en_US.UTF-8
+
+# auto attach tmux session
+# if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+#   tmux attach-session -t cloud || tmux new-session -s cloud
+# fi
