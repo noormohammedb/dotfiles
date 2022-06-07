@@ -15,7 +15,7 @@ export ZSH=$HOME"/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
 
 # COLOR Prompt
 
@@ -39,7 +39,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to automatically update without prompting.
 # DISABLE_UPDATE_PROMPT="true"
@@ -85,25 +85,26 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	docker
-	tmux vscode
+#	docker
+	tmux
+	vscode
 	ubuntu
 	npm
 	node
 	man
-	adb
+#	adb
 	sudo
 	git-auto-fetch
-	battery
-	minikube
-	kubectl
-	ansible
-	copyfile
-	copydir
-	docker-compose
-	grc
+# battery
+#	minikube
+#	kubectl
+#	ansible
+#	copyfile
+#	copypath
+#	docker-compose
+#	grc
 	systemd
-	aws
+#	aws
 	ufw
 	colored-man-pages
 	zsh-syntax-highlighting
@@ -144,8 +145,8 @@ source $ZSH/oh-my-zsh.sh
 
 # Custom Alias
 
-alias cdp='cd /home/rootofadmin/projects/'
-alias cdm='cd /home/rootofadmin/projects/mediping-api'
+# alias cdp='cd /home/rootofadmin/projects/'
+# alias cdm='cd /home/rootofadmin/projects/mediping-api'
 alias dev='npm run dev'
 alias gps='git push -vv'
 alias mglt='npm run migrate latest'
@@ -153,14 +154,17 @@ alias mgrf='npm run migrate refresh'
 alias mgrl='npm run migrate rollback'
 alias mgmk='npm run migrate make'
 alias pip='pip3'
-alias python='python3'
+alias vim='nvim'
 alias explor='/usr/bin/xdg-open $(pwd)'
-alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
-alias cdr='cd /home/rootofadmin/projects/react'
+# alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
+# alias cdr='cd /home/rootofadmin/projects/react'
 alias pcli='protonvpn-cli'
 alias c='clear'
-alias la='exa -al'
-getip () { curl -H "Referer:https://ipinfo.io/" https://ipinfo.io/widget/"$1";}
+alias l='exa --icons -ghal'
+alias curla='curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" '
+alias nt='{ ping 1.0.0.1; fg }&{ ping6 2606:4700:4700::1001; fg }'
+getip () { curl -H "Referer:https://ipinfo.io/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" https://ipinfo.io/widget/"$1";}
+getmyip () { curl -H "Referer:https://ipinfo.io/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" https://ipinfo.io/widget;}
 
 # Local bin Path
 
@@ -171,8 +175,10 @@ DEV_TOOLS=$HOME"/DevTools"
 ANDROID_HOME=$HOME"/Android/Sdk"
 
 export ANDROID_HOME
-export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:$LOCAL_BIN
-export PATH="$PATH:$DEV_TOOLS/flutter/bin"
+# export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:LOCAL_BIN
+export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.local/bin"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/go/bin"
 # export PATH=${PATH}:/root/android-sdk-linux/platform-tools
 
 # export CHROME_EXECUTABLE=''
@@ -181,3 +187,8 @@ export PATH="$PATH:$DEV_TOOLS/flutter/bin"
 
 export LANG=en_US.UTF-8
 # export LC_CTYPE=en_US.UTF-8
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+autoload -U compinit; compinit

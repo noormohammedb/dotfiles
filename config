@@ -4,13 +4,13 @@ Host *
    TCPKeepAlive no
    ForwardAgent no
    IdentityAgent none
-Host afam-old
-   Hostname 164.52.200.20
-   User noor
-   IdentityFile ~/.ssh/id_ed25519_afam_cloud 
+Host fsci-gitlab
+   Hostname git.fosscommunity.in
+   User root
+   IdentityFile ~/.ssh/id_ed25519
    Compression yes
 Host aws
-   Hostname 18.207.134.189
+   Hostname 44.192.95.57
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_aws
    Compression yes
@@ -31,7 +31,7 @@ Host gcp
    Port 6000
    Compression yes
 Host rhaws
-   Hostname 34.234.67.182
+   Hostname 34.239.162.17
    IdentityFile ~/.ssh/id_ed25519_aws_rhel_rhel-user
    User rhel-user
    Compression yes
@@ -40,7 +40,7 @@ Host tunnel.*.ngrok.com
    IdentityFile ~/.ssh/id_rsa_ngrock_tunneling
    Compression yes
 Host awsf
-   Hostname 18.207.134.189
+   Hostname 44.192.95.57
    User ubuntu
    IdentityFile ~/.ssh/id_ed25519_aws_flutter
    Compression yes
@@ -52,16 +52,28 @@ Host getdb-old
    Compression yes
    LogLevel DEBUG
 Host azure
-   Hostname 40.80.88.206
-   User ubuntu
-   IdentityFile ~/.ssh/id_ed25519_azure_ubuntu
+   Hostname 13.76.85.107
+   User azureuser
+   #IdentityFile ~/.ssh/id_ed25519_azure_ubuntu
+   IdentityFile ~/.ssh/azure-key.pem
    Compression yes
 Host afam
+#   Hostname 161.97.159.7
    Hostname 75.119.130.130
    User noor
    IdentityFile ~/.ssh/id_ed25519_afam_contabo
    SendEnv TMUX
-   Port 19022
+#   Port 19022
+   Port 22
+   Compression yes
+Host blc
+#   Hostname 161.97.159.7
+   Hostname 75.119.130.130
+   User noorblc
+   IdentityFile ~/.ssh/id_ed25519_contabo_blc
+   SendEnv TMUX
+#   Port 19022
+   Port 22
    Compression yes
 Host getdb
    Hostname 75.119.130.130
@@ -71,17 +83,23 @@ Host getdb
    Port 19022
    Compression yes
    LogLevel DEBUG
-Host alibaba_root
-   Hostname 149.129.128.240
-   User root
-   IdentityFile ~/.ssh/id_ed25519_alibaba_cloud
-   LogLevel DEBUG
+Host dalelna
+   Hostname 141.136.36.194
+   User sulaiman
+   IdentityFile ~/.ssh/id_ed25519
+   # LogLevel DEBUG
 Host alb
-   Hostname 149.129.128.240
-   User ubuntu
+   Hostname 47.250.43.68
+   User myuser
    IdentityFile ~/.ssh/id_ed25519_alibaba_cloud
-   Port 19022
+   # Port 19022
+   Port 18022
    SendEnv TMUX
 #   RemoteCommand echo "Hello World"
 #   PermitLocalCommand yes
 #   LogLevel DEBUG
+Host termux
+	Hostname 192.168.22.17
+	User u0_a273
+   IdentityFile ~/.ssh/id_ed25519
+	Port 8022
