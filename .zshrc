@@ -1,9 +1,9 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -19,10 +19,10 @@ ZSH_THEME="agnoster"
 
 # COLOR Prompt
 
- export COLOR_PROMPT=yes
- export force_colored_prompt=yes
- export TERM="xterm-256color"
- export ZSH_TMUX_TERM="screen-256color"
+#  export COLOR_PROMPT=yes
+#  export force_colored_prompt=yes
+#  export TERM="xterm-256color"
+#  export ZSH_TMUX_TERM="screen-256color"
 
 
 # Set list of themes to pick from when loading at random
@@ -94,7 +94,7 @@ plugins=(
 	man
 #	adb
 	sudo
-	git-auto-fetch
+#	git-auto-fetch
 # battery
 #	minikube
 #	kubectl
@@ -140,24 +140,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
 # Custom Alias
 
-# alias cdp='cd /home/rootofadmin/projects/'
-# alias cdm='cd /home/rootofadmin/projects/mediping-api'
+alias cds='cd /storage/emulated/0/'
 alias dev='npm run dev'
 alias gps='git push -vv'
-alias mglt='npm run migrate latest'
-alias mgrf='npm run migrate refresh'
-alias mgrl='npm run migrate rollback'
-alias mgmk='npm run migrate make'
 alias pip='pip3'
 alias vim='nvim'
 alias explor='/usr/bin/xdg-open $(pwd)'
-# alias cda='cd /home/rootofadmin/projects/mediping-admin-api'
-# alias cdr='cd /home/rootofadmin/projects/react'
 alias pcli='protonvpn-cli'
 alias c='clear'
 alias l='exa --icons -ghal'
@@ -175,15 +168,15 @@ DEV_TOOLS=$HOME"/DevTools"
 ANDROID_HOME=$HOME"/Android/Sdk"
 
 export ANDROID_HOME
-# export PATH=${PATH}:/home/rootofadmin/adb:$ANDROID_HOME/cmdline-tools/tools/bin:$ANDROID_HOME/platform-tools:LOCAL_BIN
 export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.local/bin"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$HOME/go/bin"
-# export PATH=${PATH}:/root/android-sdk-linux/platform-tools
 
-# export CHROME_EXECUTABLE=''
 
-# export for tmux font compatiblity
+# auto attach tmux session when ssh connection
+#	if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
+#	  tmux attach-session -t cloud || tmux new-session -s cloud
+#	fi
 
 export LANG=en_US.UTF-8
 # export LC_CTYPE=en_US.UTF-8
