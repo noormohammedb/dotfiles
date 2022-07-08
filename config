@@ -19,7 +19,7 @@ Host tunnel.*.ngrok.com
    IdentityFile ~/.ssh/id_rsa_ngrock_tunneling
    Compression yes
 Host termux
-   Hostname 192.168.22.1.1
+   Hostname 192.168.145.128
    User u0_a272
    IdentityFile ~/.ssh/id_ed25519
    Port 8022

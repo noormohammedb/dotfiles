@@ -1,15 +1,8 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME"/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -38,14 +31,13 @@ ZSH_THEME="agnoster"
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to automatically update without prompting.
-# DISABLE_UPDATE_PROMPT="true"
+# Uncomment one of the following lines to change the auto-update behavior
+# zstyle ':omz:update' mode disabled  # disable automatic updates
+# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
+# zstyle ':omz:update' frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -60,6 +52,9 @@ DISABLE_AUTO_UPDATE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# You can also set it to another string to have that shown instead of the default red dots.
+# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
+# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -90,7 +85,7 @@ plugins=(
 	vscode
 	ubuntu
 	npm
-	node
+#	node
 	man
 #	adb
 	sudo
@@ -100,15 +95,16 @@ plugins=(
 #	kubectl
 #	ansible
 #	copyfile
-#	copypath
+	copypath
 #	docker-compose
 #	grc
 	systemd
 #	aws
-	ufw
-	colored-man-pages
+#	ufw
+#	colored-man-pages
 	zsh-syntax-highlighting
 	zsh-autosuggestions
+	rust
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -139,10 +135,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 # Custom Alias
 
 alias cds='cd /storage/emulated/0/'
@@ -153,6 +145,10 @@ alias vim='nvim'
 alias explor='/usr/bin/xdg-open $(pwd)'
 alias pcli='protonvpn-cli'
 alias c='clear'
+alias cac='cargo check'
+alias caw='cargo watch'
+alias cab='cargo build'
+alias car='cargo run'
 alias l='exa --icons -ghal'
 alias curla='curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" '
 alias nt='{ ping 1.0.0.1; fg }&{ ping6 2606:4700:4700::1001; fg }'
@@ -166,22 +162,22 @@ LOCAL_BIN=$HOME"/.local/bin"
 #AndroidDev PATH
 DEV_TOOLS=$HOME"/DevTools"
 ANDROID_HOME=$HOME"/Android/Sdk"
-
+ 
 export ANDROID_HOME
-export PATH="$PATH:$HOME/.npm-global/bin:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.npm-global/bin"
 export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$HOME/go/bin"
+export PATH="$PATH:$LOCAL_BIN"
 
 
 # auto attach tmux session when ssh connection
 #	if [[ -n "$PS1" ]] && [[ -z "$TMUX" ]] && [[ -n "$SSH_CONNECTION" ]]; then
 #	  tmux attach-session -t cloud || tmux new-session -s cloud
 #	fi
-
+ 
 export LANG=en_US.UTF-8
 # export LC_CTYPE=en_US.UTF-8
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-autoload -U compinit; compinit
+ 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# autoload -U compinit; compinit

@@ -14,6 +14,8 @@ filetype plugin on
 " python3 del powerline_setup
 
 set laststatus=2
+set clipboard=unnamed,unnamedplus
+
 colorscheme industry
 " set rtp+=/usr/lib/python3/dist-packages/powerline/bindings/vim
 
