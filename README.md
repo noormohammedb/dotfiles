@@ -1,5 +1,5 @@
 
-> Run script.sh or Execute them seperately. 
+> Run [script.sh](./script.sh) or Execute them seperately. 
 
 
 
