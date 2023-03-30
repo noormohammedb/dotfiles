@@ -1,5 +1,5 @@
 Host *
-   StrictHostKeyChecking no
+#   StrictHostKeyChecking no
    ServerAliveInterval 20
    TCPKeepAlive no
    ForwardAgent no
