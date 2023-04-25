@@ -12,14 +12,15 @@ Host gitlab gitlab.com
 Host github github.com
    Hostname github.com
    User git
-   IdentityFile ~/.ssh/id_ed25519
+   IdentityFile ~/.ssh/id_ed25519_github
    Compression yes
 Host tunnel.*.ngrok.com
    Hostname tunnel.us.ngrok.com
    IdentityFile ~/.ssh/id_rsa_ngrock_tunneling
    Compression yes
 Host termux
-   Hostname 192.168.145.128
+   Hostname 10.255.254.17
+   #   Hostname 192.168.145.128
    User u0_a272
    IdentityFile ~/.ssh/id_ed25519
    Port 8022
@@ -30,12 +31,12 @@ Host tunnel_port
    IdentityFile ~/.ssh/id_ed25519
    Compression yes
    LogLevel DEBUG
-Host alb
-   Hostname 47.250.43.68
-   User myuser
-   IdentityFile ~/.ssh/id_ed25519_alibaba_cloud
+Host shakoor
+   Hostname 47.250.57.113
+   User noor
+   IdentityFile ~/.ssh/id_ed25519_shakoor
    # Port 19022
-   Port 18022
+   Port 22
    SendEnv TMUX
 #   LogLevel DEBUG
 

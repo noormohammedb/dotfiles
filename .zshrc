@@ -1,5 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+# homebrew completions config
+FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -8,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # COLOR Prompt
 
@@ -80,31 +82,31 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-#	docker
+	docker
 	tmux
 	vscode
-	ubuntu
+#	ubuntu
 	npm
 #	node
 	man
 #	adb
 	sudo
 #	git-auto-fetch
-# battery
 #	minikube
 #	kubectl
 #	ansible
-#	copyfile
+	copyfile
 	copypath
 #	docker-compose
 #	grc
-	systemd
+#	systemd
 #	aws
 #	ufw
 #	colored-man-pages
 	zsh-syntax-highlighting
 	zsh-autosuggestions
 	rust
+	brew
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -118,7 +120,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nvim'
 # else
 #   export EDITOR='mvim'
 # fi
@@ -140,14 +142,14 @@ source $ZSH/oh-my-zsh.sh
 alias cds='cd /storage/emulated/0/'
 alias dev='npm run dev'
 alias gps='git push -vv'
-alias pip='pip3'
+# alias pip='pip3'
 alias vim='nvim'
 alias explor='/usr/bin/xdg-open $(pwd)'
 alias pcli='protonvpn-cli'
 alias c='clear'
-alias cac='cargo check'
+alias cac='cargo check --timings'
 alias caw='cargo watch'
-alias cab='cargo build'
+alias cab='cargo build --timings'
 alias car='cargo run'
 alias l='exa --icons -ghal'
 alias curla='curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" '
@@ -159,14 +161,9 @@ getmyip () { curl -H "Referer:https://ipinfo.io/" -A "Mozilla/5.0 (Windows NT 10
 
 LOCAL_BIN=$HOME"/.local/bin"
 
-#AndroidDev PATH
-DEV_TOOLS=$HOME"/DevTools"
-ANDROID_HOME=$HOME"/Android/Sdk"
  
-export ANDROID_HOME
-export PATH="$PATH:$HOME/.npm-global/bin"
-export PATH="$PATH:/usr/local/go/bin"
 export PATH="$PATH:$LOCAL_BIN"
+export PATH="$PATH:$HOME/Library/Python/3.9/bin"
 
 
 # auto attach tmux session when ssh connection
@@ -175,9 +172,18 @@ export PATH="$PATH:$LOCAL_BIN"
 #	fi
  
 export LANG=en_US.UTF-8
-# export LC_CTYPE=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+export RUSTC_WRAPPER=sccache
+export GOPATH="$HOME/go"
+export GOROOT="/usr/local/go"
  
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # autoload -U compinit; compinit
+export PATH="/opt/homebrew/opt/node@18/bin:$HOME/.composer/vendor/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

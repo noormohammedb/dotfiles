@@ -9,9 +9,10 @@ set number
 filetype plugin on
 
 
- python3 from powerline.vim import setup as powerline_setup
- python3 powerline_setup()
- python3 del powerline_setup
+" there is no python support in native macos vim
+" python3 from powerline.vim import setup as powerline_setup
+" python3 powerline_setup()
+" python3 del powerline_setup
 
 set laststatus=2
 set clipboard^=unnamedplus
