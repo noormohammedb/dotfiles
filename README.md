@@ -56,7 +56,7 @@ ln -s $HOME/.dotfiles/default.json $HOME/.local/lib/python3.10/site-packages/pow
 mkdir ~/.config/tmux/
 ```
 ```
-git clone https://github.com/tmux-plugins/tmux-yank ~/.config/tmux/
+git clone https://github.com/tmux-plugins/tmux-yank ~/.config/tmux/tmux-yank
 ```
 ## neovim config
 ```
