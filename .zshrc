@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # homebrew completions config
@@ -82,7 +89,7 @@ zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	docker
+# docker
 	tmux
 	vscode
 #	ubuntu
@@ -151,6 +158,7 @@ alias cac='cargo check --timings'
 alias caw='cargo watch'
 alias cab='cargo build --timings'
 alias car='cargo run'
+alias ca='cargo'
 alias l='exa --icons -ghal'
 alias curla='curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" '
 alias nt='{ ping 1.0.0.1; fg }&{ ping6 2606:4700:4700::1001; fg }'
@@ -163,7 +171,8 @@ LOCAL_BIN=$HOME"/.local/bin"
 
  
 export PATH="$PATH:$LOCAL_BIN"
-export PATH="$PATH:$HOME/Library/Python/3.9/bin"
+export PATH="$PATH:$HOME/Library/Python/3.9/bin:$HOME/go/bin"
+# export PATH="$PATH:$HOME/learn/substrate/binaries"
 
 
 # auto attach tmux session when ssh connection
@@ -176,14 +185,28 @@ export LC_CTYPE=en_US.UTF-8
 export RUSTC_WRAPPER=sccache
 export GOPATH="$HOME/go"
 export GOROOT="/usr/local/go"
+export ANDROID_HOME="$HOME/android/home"
+export ANDROID_SDK_ROOT="/opt/homebrew/share/android-commandlinetools"
  
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # autoload -U compinit; compinit
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 export PATH="/opt/homebrew/opt/node@18/bin:$HOME/.composer/vendor/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# bun completions
+[ -s "/Users/fossman/.bun/_bun" ] && source "/Users/fossman/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
