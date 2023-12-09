@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/Library/Python/3.9/bin:$PATH
+export PATH=$HOME/Library/Python/3.9/bin:/opt/homebrew/opt/curl/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -104,6 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# sccache also configured ~/.cargo/cofig.toml
+export RUSTC_WRAPPER=/opt/homebrew/bin/sccache
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -116,8 +119,18 @@ source $ZSH/oh-my-zsh.sh
 # Custom Alias
 alias pip='pip3'
 alias c='clear'
-alias cac='cargo check'
+alias cac='cargo check --timings'
 alias caw='cargo watch'
-alias cab='cargo build'
-alias car='cargo run'
+alias cab='cargo build --timings'
+alias car='cargo run --timings'
 alias l='exa --icons -ghal'
+alias curla='curl -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" '
+alias nt='{ ping 1.0.0.1; fg }&{ ping6 2606:4700:4700::1001; fg }'
+
+getip () {
+   curl -H "Referer:https://ipinfo.io/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" https://ipinfo.io/widget/"$1";
+}
+getmyip () {
+   curl -H "Referer:https://ipinfo.io/" -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" https://ipinfo.io/widget;
+}
+
